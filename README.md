@@ -11,4 +11,3 @@ Aquí tienes una lista de los repositorios que contienen los microservicios hech
 3. [**Servicio de Eventos**](https://github.com/INNOVAPS-ARQUI-2024/ecomarket-servicio-eventos) - Una API para interactuar con los Eventos en la plataforma.
 4. [**Servicio de Pagos**](https://github.com/INNOVAPS-ARQUI-2024/ecomarket-servicio-pagos) - Una API para utiliar la pasarela de pagos.
 5. [**Servicio de Control Usuarios**](https://github.com/INNOVAPS-ARQUI-2024/ecomarket-servicio-control-usuarios) - API para realizar la autenticación y registro de usuarios en la plataforma.
-
