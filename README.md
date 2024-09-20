@@ -1,6 +1,6 @@
 # 📚 EcoMarket BackEnd [SpringBoot]
 
-¡Bienvenido al **Backend de SpringBoot de EcoMarket**! Este proyecto tiene como objetivo mostrar los repositorios que componen el Bakcend de este proyecto. 
+¡Bienvenido al **Backend de SpringBoot de EcoMarket**! Este repositorio tiene como objetivo mostrar los repositorios que componen el Bakcend de este proyecto. 
 
 ## 🧩 Servicos
 
