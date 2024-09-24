@@ -47,11 +47,6 @@ jobs:
         run: |
           sshpass -p "${{ secrets.PROD_SERVER_PASSWORD }}" scp -P ${{ secrets.PROD_SERVER_PORT }} -o StrictHostKeyChecking=no ecomarket-app-backend-springboot-prod.tar ${{ secrets.PROD_SERVER_USER }}@${{ secrets.PROD_SERVER_HOST }}:/tmp/ecomarket-app-backend-springboot-prod.tar
 
-      - name: Load Docker Image and Run Container on Production Server
+      - name: Run Deployment Script on Production Server
         run: |
-          sshpass -p "${{ secrets.PROD_SERVER_PASSWORD }}" ssh -p ${{ secrets.PROD_SERVER_PORT }} -o StrictHostKeyChecking=no ${{ secrets.PROD_SERVER_USER }}@${{ secrets.PROD_SERVER_HOST }} "
-          docker load -i /tmp/ecomarket-app-backend-springboot-prod.tar &&
-          docker stop ecomarket-app-backend-springboot-prod || true &&
-          docker rm ecomarket-app-backend-springboot-prod || true &&
-          docker run -d --name ecomarket-app-backend-springboot-prod -p 8080:8080 ecomarket-app-backend-springboot:prod"
-          
+          sshpass -p "${{ secrets.PROD_SERVER_PASSWORD }}" ssh -p ${{ secrets.PROD_SERVER_PORT }} -o StrictHostKeyChecking=no ${{ secrets.PROD_SERVER_USER }}@${{ secrets.PROD_SERVER_HOST }} "/home/estudiante/scripts/deploy_docker_image.sh"
