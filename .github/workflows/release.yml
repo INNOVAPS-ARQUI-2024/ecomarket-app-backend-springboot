@@ -47,10 +47,6 @@ jobs:
         run: |
           sshpass -p "${{ secrets.QA_SERVER_PASSWORD }}" scp -P ${{ secrets.QA_SERVER_PORT }} -o StrictHostKeyChecking=no ecomarket-app-backend-springboot-qa.tar ${{ secrets.QA_SERVER_USER }}@${{ secrets.QA_SERVER_HOST }}:/tmp/ecomarket-app-backend-springboot-qa.tar
 
-      - name: Load Docker Image and Run Container on QA Server
+      - name: Run Deployment Script on QA Server
         run: |
-          sshpass -p "${{ secrets.QA_SERVER_PASSWORD }}" ssh -p ${{ secrets.QA_SERVER_PORT }} -o StrictHostKeyChecking=no ${{ secrets.QA_SERVER_USER }}@${{ secrets.QA_SERVER_HOST }} "
-          docker load -i /tmp/ecomarket-app-backend-springboot-qa.tar &&
-          docker stop ecomarket-app-backend-springboot-qa || true &&
-          docker rm ecomarket-app-backend-springboot-qa || true &&
-          docker run -d --name ecomarket-app-backend-springboot-qa -p 8080:8080 ecomarket-app-backend-springboot:qa"
+          sshpass -p "${{ secrets.QA_SERVER_PASSWORD }}" ssh -p ${{ secrets.QA_SERVER_PORT }} -o StrictHostKeyChecking=no ${{ secrets.QA_SERVER_USER }}@${{ secrets.QA_SERVER_HOST }} "/home/estudiante/scripts/deploy_docker_image.sh"
