@@ -18,7 +18,7 @@ spring:
         
         # Servicio Productos y Servicios
         - id: productos-servicios
-          uri: lb://PRODUCTOS-SERVICIOS
+          uri: lb://ECOMARKET-SERVICIO-PRODUCTOS-SERVICIOS
           predicates:
             - Path=/api/productos/**, /api/servicios/**
           filters:
