@@ -15,21 +15,23 @@ import org.springframework.web.cors.reactive.CorsWebFilter;
 
 import java.util.Arrays;
 
+import static org.springframework.security.config.Customizer.withDefaults;
+
 @Configuration
 public class SecurityConfig {
 
     @Bean
     public SecurityWebFilterChain securityWebFilterChain(ServerHttpSecurity http) {
         http
-            .csrf(csrf -> csrf.disable()) // Deshabilitar CSRF
-            .authorizeExchange(auth -> auth
-                // Permitir acceso público a las solicitudes GET
-                .pathMatchers(HttpMethod.GET, "/api/productos/**").permitAll()
-                .pathMatchers(HttpMethod.GET, "/api/reseñas/**").permitAll()
-                .pathMatchers(HttpMethod.GET, "/api/servicios/**").permitAll()
-                // El resto de las rutas requieren autenticación
-                .anyExchange().authenticated())
-            .httpBasic(); // Habilitar autenticación básica
+                .csrf(csrf -> csrf.disable()) // Deshabilitar CSRF
+                .authorizeExchange(auth -> auth
+                        // Permitir acceso público a las solicitudes GET
+                        .pathMatchers(HttpMethod.GET, "/api/productos/**").permitAll()
+                        .pathMatchers(HttpMethod.GET, "/api/reseñas/**").permitAll()
+                        .pathMatchers(HttpMethod.GET, "/api/servicios/**").permitAll()
+                        // El resto de las rutas requieren autenticación
+                        .anyExchange().authenticated())
+                .httpBasic(withDefaults()); // Habilitar autenticación básica sin parámetros
 
         return http.build();
     }
@@ -48,7 +50,7 @@ public class SecurityConfig {
 
     @Bean
     public UserDetailsService userDetailsService() {
-        UserDetails user = User.withDefaultPasswordEncoder()
+        UserDetails user = User.builder()
                 .username("admin")
                 .password("password")
                 .roles("USER")
