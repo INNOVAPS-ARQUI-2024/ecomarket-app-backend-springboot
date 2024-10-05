@@ -42,7 +42,7 @@ public class SecurityConfig {
         CorsConfiguration config = new CorsConfiguration();
         config.setAllowCredentials(true);
         config.setAllowedOrigins(Arrays.asList("http://localhost:4200"));
-        config.setAllowedMethods(Arrays.asList("GET"));
+        config.setAllowedMethods(Arrays.asList("GET", "POST", "PUT", "DELETE"));
         config.setAllowedHeaders(Arrays.asList("Authorization", "Cache-Control", "Content-Type"));
         source.registerCorsConfiguration("/**", config);
         return new CorsWebFilter(source);
@@ -51,8 +51,8 @@ public class SecurityConfig {
     @Bean
     public UserDetailsService userDetailsService() {
         UserDetails user = User.builder()
-                .username("admin")
-                .password("password")
+                .username("ecomarket")
+                .password("3c0m4rk3t")
                 .roles("USER")
                 .build();
 
