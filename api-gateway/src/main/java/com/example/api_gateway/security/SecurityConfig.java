@@ -25,13 +25,8 @@ public class SecurityConfig {
         http
                 .csrf(csrf -> csrf.disable()) // Deshabilitar CSRF
                 .authorizeExchange(auth -> auth
-                        // Permitir acceso público a las solicitudes GET
-                        .pathMatchers(HttpMethod.GET, "/api/productos/**").permitAll()
-                        .pathMatchers(HttpMethod.GET, "/api/reseñas/**").permitAll()
-                        .pathMatchers(HttpMethod.GET, "/api/servicios/**").permitAll()
-                        // El resto de las rutas requieren autenticación
-                        .anyExchange().authenticated())
-                .httpBasic(withDefaults()); // Habilitar autenticación básica sin parámetros
+                        .anyExchange().permitAll() // Permitir acceso a todas las rutas
+                );
 
         return http.build();
     }
@@ -46,16 +41,5 @@ public class SecurityConfig {
         config.setAllowedHeaders(Arrays.asList("Authorization", "Cache-Control", "Content-Type"));
         source.registerCorsConfiguration("/**", config);
         return new CorsWebFilter(source);
-    }
-
-    @Bean
-    public UserDetailsService userDetailsService() {
-        UserDetails user = User.builder()
-                .username("ecomarket")
-                .password("3c0m4rk3t")
-                .roles("USER")
-                .build();
-
-        return new InMemoryUserDetailsManager(user);
     }
 }
