@@ -2,7 +2,7 @@
 
 # Variables
 DOCKER_IMAGE_PATH="/tmp/ecomarket-servicio-eureka-prod.tar"
-DOCKER_IMAGE_NAME="ecomarket-app-frontend:prod"
+DOCKER_IMAGE_NAME="ecomarket-servicio-eureka:prod"
 CONTAINER_NAME="ecomarket-servicio-eureka-prod"
 
 # Cargar la imagen Docker
