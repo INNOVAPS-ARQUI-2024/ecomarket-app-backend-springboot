@@ -13,7 +13,7 @@ docker stop $CONTAINER_NAME || true
 docker rm $CONTAINER_NAME || true
 
 # Ejecutar un nuevo contenedor
-docker run -d --name $CONTAINER_NAME -p 80:80 $DOCKER_IMAGE_NAME
+docker run -d --name $CONTAINER_NAME -p 8761:8761 $DOCKER_IMAGE_NAME
 
 # Opcional: eliminar el archivo .tar para ahorrar espacio
 rm $DOCKER_IMAGE_PATH
