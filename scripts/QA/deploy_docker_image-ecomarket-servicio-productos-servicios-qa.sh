@@ -18,5 +18,5 @@ docker run -d --name $CONTAINER_NAME -p 8080:8080 $DOCKER_IMAGE_NAME
 # Opcional: eliminar el archivo .tar para ahorrar espacio
 rm $DOCKER_IMAGE_PATH
 
-echo "Deployment completed successfully!"
+echo "Deployment ecomarket-servicio-productos-servicios-qa completed successfully!"
 
