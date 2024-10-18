@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Variables
-DOCKER_IMAGE_NAME="ecomarket-servicio-api-gateway:qa"
+DOCKER_IMAGE_NAME="devopsarqui2024/ecomarket-servicio-api-gateway:qa"
 CONTAINER_NAME="ecomarket-servicio-api-gateway"
 NETWORK_NAME="ecomarket-network"
 
@@ -15,4 +15,4 @@ docker pull $DOCKER_IMAGE_NAME
 # Ejecutar un nuevo contenedor
 docker run -d --name $CONTAINER_NAME --network $NETWORK_NAME -p 7999:7999 $DOCKER_IMAGE_NAME
 
-echo "Deployment ecomarket-servicio-api-gateway-qa completed successfully!"
+echo "Deployment ecomarket-servicio-api-gateway completed successfully!"
