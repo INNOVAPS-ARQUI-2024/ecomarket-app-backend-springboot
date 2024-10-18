@@ -2,7 +2,7 @@
 
 # Variables
 DOCKER_IMAGE_NAME="devopsarqui2024/ecomarket-app-frontend:qa"
-CONTAINER_NAME="ecomarket-app-frontend-qa"
+CONTAINER_NAME="ecomarket-app-frontend"
 NETWORK_NAME="ecomarket-network"
 
 # Detener y eliminar el contenedor anterior si existe
