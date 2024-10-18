@@ -1,8 +1,8 @@
 #!/bin/bash
 
 # Variables
-DOCKER_IMAGE_NAME="ecomarket-servicio-productos-servicios:qa"
-CONTAINER_NAME="ecomarket-servicio-productos-servicios-qa"
+DOCKER_IMAGE_NAME="devopsarqui2024/ecomarket-servicio-productos-servicios:qa"
+CONTAINER_NAME="ecomarket-servicio-productos-servicios"
 NETWORK_NAME="ecomarket-network"
 
 # Detener y eliminar el contenedor anterior si existe
