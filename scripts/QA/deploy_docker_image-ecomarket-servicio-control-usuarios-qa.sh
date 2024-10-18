@@ -2,7 +2,7 @@
 
 # Variables
 DOCKER_IMAGE_NAME="ecomarket-servicio-control-usuarios:qa"
-CONTAINER_NAME="ecomarket-servicio-control-usuarios-qa"
+CONTAINER_NAME="ecomarket-servicio-control-usuarios"
 NETWORK_NAME="ecomarket-network"
 
 # Detener y eliminar el contenedor anterior si existe
