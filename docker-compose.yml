@@ -1,1 +1,87 @@
+version: '3.8'
 
+services:
+  ecomarket-app-frontend:
+    build:
+      context: ./ecomarket-app-frontend
+      dockerfile: Dockerfile
+    ports:
+      - "80:80"
+    networks:
+      - ecomarket-network
+
+  ecomarket-servicio-eureka:
+    build:
+      context: ./ecomarket-servicio-eureka
+      dockerfile: Dockerfile
+    ports:
+      - "8761:8761"
+    networks:
+      - ecomarket-network
+
+  ecomarket-servicio-api-gateway:
+    build:
+      context: ./ecomarket-servicio-api-gateway
+      dockerfile: Dockerfile
+    ports:
+      - "7999:7999"
+    networks:
+      - ecomarket-network
+
+  ecomarket-servicio-productos-servicios:
+    build:
+      context: ./ecomarket-servicio-productos-servicios
+      dockerfile: Dockerfile
+    ports:
+      - "8080:8080"
+    networks:
+      - ecomarket-network
+
+  ecomarket-servicio-control-usuarios:
+    build:
+      context: ./ecomarket-servicio-control-usuarios
+      dockerfile: Dockerfile
+    ports:
+      - "8082:8082"
+    networks:
+      - ecomarket-network
+
+  ecomarket-servicio-ofertas:
+    build:
+      context: ./ecomarket-servicio-ofertas
+      dockerfile: Dockerfile
+    ports:
+      - "8083:8083"
+    networks:
+      - ecomarket-network
+
+  ecomarket-servicio-eventos:
+    build:
+      context: ./ecomarket-servicio-eventos
+      dockerfile: Dockerfile
+    ports:
+      - "8084:8084"
+    networks:
+      - ecomarket-network
+
+  ecomarket-servicio-pagos:
+    build:
+      context: ./ecomarket-servicio-pagos
+      dockerfile: Dockerfile
+    ports:
+      - "8081:8081"
+    networks:
+      - ecomarket-network
+
+  ecomarket-servicio-resenias:
+    build:
+      context: ./ecomarket-servicio-resenias
+      dockerfile: Dockerfile
+    ports:
+      - "8085:8085"
+    networks:
+      - ecomarket-network
+
+networks:
+  ecomarket-network:
+    driver: bridge
