@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Variables
-DOCKER_IMAGE_NAME="ecomarket-servicio-eureka:qa"
+DOCKER_IMAGE_NAME="devopsarqui2024/ecomarket-servicio-eureka:qa"
 CONTAINER_NAME="ecomarket-servicio-eureka"
 NETWORK_NAME="ecomarket-network"
 
@@ -15,4 +15,4 @@ docker pull $DOCKER_IMAGE_NAME
 # Ejecutar un nuevo contenedor en la red
 docker run -d --name $CONTAINER_NAME --network $NETWORK_NAME -p 8761:8761 $DOCKER_IMAGE_NAME
 
-echo "Deployment ecomarket-servicio-eureka-qa completed successfully!"
+echo "Deployment ecomarket-servicio-eureka completed successfully!"
