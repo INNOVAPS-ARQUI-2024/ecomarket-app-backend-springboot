@@ -1,12 +1,9 @@
 #!/bin/bash
 
 # Variables
-DOCKER_IMAGE_NAME="${DOCKERHUB_USERNAME}/ecomarket-app-frontend:qa"
+DOCKER_IMAGE_NAME="devopsarqui2024/ecomarket-app-frontend:qa"
 CONTAINER_NAME="ecomarket-app-frontend-qa"
 NETWORK_NAME="ecomarket-network"
-
-# Iniciar sesión en Docker Hub (opcional, si el repositorio es privado)
-echo "${DOCKERHUB_PASSWORD}" | docker login -u "${DOCKERHUB_USERNAME}" --password-stdin
 
 # Detener y eliminar el contenedor anterior si existe
 docker stop $CONTAINER_NAME || true
