@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Variables
-DOCKER_IMAGE_NAME="ecomarket-servicio-pagos:qa"
+DOCKER_IMAGE_NAME="devopsarqui2024/ecomarket-servicio-pagos:qa"
 CONTAINER_NAME="ecomarket-servicio-pagos"
 NETWORK_NAME="ecomarket-network"
 
