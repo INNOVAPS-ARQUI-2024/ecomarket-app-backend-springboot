@@ -6,10 +6,9 @@ services:
       context: ./ecomarket-app-frontend
       dockerfile: Dockerfile
     ports:
-      - "80:80"
+      - "4700:80"
     networks:
       - ecomarket-network
-    container_name: ecomarket-app-frontend
 
   ecomarket-servicio-eureka:
     build:
@@ -19,7 +18,6 @@ services:
       - "8761:8761"
     networks:
       - ecomarket-network
-    container_name: ecomarket-servicio-eureka
 
   ecomarket-servicio-api-gateway:
     build:
@@ -29,7 +27,6 @@ services:
       - "7999:7999"
     networks:
       - ecomarket-network
-    container_name: ecomarket-servicio-api-gateway
 
   ecomarket-servicio-productos-servicios:
     build:
@@ -39,7 +36,6 @@ services:
       - "8080:8080"
     networks:
       - ecomarket-network
-    container_name: ecomarket-servicio-productos-servicios
 
   ecomarket-servicio-control-usuarios:
     build:
@@ -49,7 +45,6 @@ services:
       - "8082:8082"
     networks:
       - ecomarket-network
-    container_name: ecomarket-servicio-control-usuarios
 
   ecomarket-servicio-ofertas:
     build:
@@ -59,7 +54,6 @@ services:
       - "8083:8083"
     networks:
       - ecomarket-network
-    container_name: ecomarket-servicio-ofertas
 
   ecomarket-servicio-eventos:
     build:
@@ -69,7 +63,6 @@ services:
       - "8084:8084"
     networks:
       - ecomarket-network
-    container_name: ecomarket-servicio-eventos
 
   ecomarket-servicio-pagos:
     build:
@@ -79,7 +72,6 @@ services:
       - "8081:8081"
     networks:
       - ecomarket-network
-    container_name: ecomarket-servicio-pagos
 
   ecomarket-servicio-resenias:
     build:
@@ -89,7 +81,6 @@ services:
       - "8085:8085"
     networks:
       - ecomarket-network
-    container_name: ecomarket-servicio-resenias
 
 networks:
   ecomarket-network:
