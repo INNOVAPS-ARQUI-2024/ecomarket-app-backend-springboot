@@ -13,6 +13,6 @@ docker rm $CONTAINER_NAME || true
 docker pull $DOCKER_IMAGE_NAME
 
 # Ejecutar un nuevo contenedor
-docker run -d --name $CONTAINER_NAME --network $NETWORK_NAME -p 80:80 $DOCKER_IMAGE_NAME
+docker run -d --name $CONTAINER_NAME --network $NETWORK_NAME -p 4700:80 $DOCKER_IMAGE_NAME
 
 echo "Deployment ecomarket-app-frontend completed successfully!"
